@@ -30,7 +30,7 @@ try {
     }
 
     echo json_encode($data);
-    //http_response_code(200);
+    http_response_code(200);
 } catch(PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
     http_response_code(403);
