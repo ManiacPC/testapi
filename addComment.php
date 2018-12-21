@@ -24,6 +24,6 @@ try {
     $statement->execute($new_comment);
     http_response_code(200);
 } catch(PDOException $error) {
-    echo $sql . "<br>" . $error->getMessage();
-    //http_response_code(404);
+    //echo $sql . "<br>" . $error->getMessage();
+    http_response_code(404);
 }
