@@ -22,14 +22,14 @@ try {
     {
         //echo $row;
         $comment = Array(
-          $row['id'],
-          $row['comment'],
-          $row['date']
+          'id' => $row['id'],
+          'comment' => $row['comment'],
+          'date' => $row['date']
         );
         array_push($data, $comment);
     }
-
-    echo json_encode($data);
+    $comments = [ "comments" => $data];
+    echo json_encode($comments);
     http_response_code(200);
 } catch(PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
